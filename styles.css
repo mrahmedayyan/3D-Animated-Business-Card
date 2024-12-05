@@ -1,0 +1,102 @@
+/* General Styles */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: gray;
+  font-family: Arial, sans-serif;
+}
+
+/* Card Container */
+.card-container {
+  perspective: 1500px; /* Perspective for 3D effect */
+}
+
+/* Card Styles */
+.card {
+  width: 350px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d; /* Enables 3D transformations */
+  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1); /* Smooth and elegant animation */
+}
+
+.card:hover {
+  transform: rotateY(360deg); /* Full rotation on hover */
+}
+
+/* Card Faces */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hides the backface when not visible */
+  border-radius: 15px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-front {
+  background-color: #26415f;
+}
+
+.card-back {
+  background-color: black;
+  transform: rotateY(180deg); /* Start the back face at 180° */
+}
+
+/* Logo and Company Name */
+.logo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+h1 {
+  font-size: 30px;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Perfect Circle for Logo */
+.logo-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden; /* Ensures the logo fits inside the circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.logo {
+  width: 100%; /* Ensures logo fills the circle */
+  height: 100%;
+  object-fit: cover; /* Ensures the logo scales perfectly inside */
+}
+
+/* Back Side Text */
+.card-back h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.card-back ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card-back li {
+  margin: 5px 0;
+  font-size: 14px;
+}
